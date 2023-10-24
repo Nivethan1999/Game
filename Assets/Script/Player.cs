@@ -67,22 +67,22 @@ public class Player : Character
 
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.UpArrow)))
         {
             exitIndex = 0;
             direction += Vector2.up;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || (Input.GetKey(KeyCode.LeftArrow)))
         {
             exitIndex = 3;
             direction += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || (Input.GetKey(KeyCode.DownArrow)))
         {
             exitIndex = 2;
             direction += Vector2.down;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.RightArrow)))
         {
             exitIndex = 1;
             direction += Vector2.right;
