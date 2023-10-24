@@ -58,12 +58,17 @@ public abstract class Character : MonoBehaviour
         myRigidbody.velocity = direction.normalized * speed;
     }
 
+    public void AnimateMovement(Vector2 direction)
+    {
+
+    }
+
     public void HandleLayers()
     {
         //Check if we are moving or standing still
         if (IsMoving)
         {
-            ActivateLayer("WalkLayer");
+            ActivateLayer("Walk");
 
             //Set animation parameter so that he faces the correct direction
             myAnimator.SetFloat("x", direction.x);
