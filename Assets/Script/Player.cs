@@ -87,25 +87,44 @@ public class Player : Character
             exitIndex = 1;
             direction += Vector2.right;
         }
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            if (!isAttacking && !IsMoving)
+            {
+                attackRoutine = StartCoroutine(Attack());
+            }
+            
+            
+
+        }
     }
 
-    private IEnumerator Attack(int spellIndex)
+    private IEnumerator Attack()
     {
-        Spell newSpell = spellBook.CastSpell(spellIndex);
+        //Spell newSpell = spellBook.CastSpell(spellIndex);
 
-        Transform currentTarget = MyTarget; 
+        //Transform currentTarget = MyTarget; 
 
-        isAttacking = true; // Indicates if we are attacking
+        //isAttacking = true; // Indicates if we are attacking
 
-        myAnimator.SetBool("attack", isAttacking); // Starts attack animation
+        //myAnimator.SetBool("attack", isAttacking); // Starts attack animation
 
-        yield return new WaitForSeconds(newSpell.MyCastTime); // Hardcoded to cast til 1 seocond without movement
+        //yield return new WaitForSeconds(newSpell.MyCastTime); // Hardcoded to cast til 1 seocond without movement
 
-        //SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
-           
-        //s.Initialize(currentTarget, newSpell.MyDamage);
+        ////SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
 
-        StopAttack(); // Stops attack
+        ////s.Initialize(currentTarget, newSpell.MyDamage);
+
+        //StopAttack(); // Stops attack
+
+     
+        isAttacking = true;
+        myAnimator.SetBool("attack", isAttacking);
+
+        yield return new WaitForSeconds(1);
+
+        StopAttack();
 
     }
 
@@ -115,7 +134,7 @@ public class Player : Character
 
         if (MyTarget != null && !isAttacking && !IsMoving && InLineOfSight()) // Checks if we are able to attack
         {
-            attackRoutine = StartCoroutine(Attack(spellIndex));
+            attackRoutine = StartCoroutine(Attack());
         }
 
     }
