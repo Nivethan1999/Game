@@ -25,8 +25,7 @@ public class Player : Character
 
     private int exitIndex = 2;
 
-    [SerializeField]
-    private GameObject[] spellPrefab;
+    private SpellBook spellBook;
 
 
 
@@ -35,7 +34,8 @@ public class Player : Character
     // Start is called before the first frame update
     protected override void Start()
     {
-     
+
+        spellBook = GetComponent<SpellBook>();
         health.Initialize(initHealth, initHealth);
         mana.Initialize(initMana, initMana);
 
@@ -101,6 +101,7 @@ public class Player : Character
 
     private IEnumerator Attack(int spellIndex)
     {
+        Spell newSpell = spellBook.CastSpell(spellIndex);
 
         isAttacking = true; // Indicates if we are attacking
 
@@ -108,7 +109,7 @@ public class Player : Character
 
         yield return new WaitForSeconds(1); // Hardcoded to cast til 1 seocond without movement
 
-        Spell s = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
+        SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
 
         s.MyTarget = MyTarget;
 

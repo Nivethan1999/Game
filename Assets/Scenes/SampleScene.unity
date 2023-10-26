@@ -834,10 +834,6 @@ MonoBehaviour:
   - {fileID: 165598753}
   - {fileID: 1049460285}
   - {fileID: 56448353}
-  spellPrefab:
-  - {fileID: 4235026016964646623, guid: ba4d1a4ac84b1944ab03ffba83cca2f2, type: 3}
-  - {fileID: 4235026016964646623, guid: 23bc0d325616c0e4daf9d71b9e4ad5ca, type: 3}
-  - {fileID: 4235026016964646623, guid: 56aa7165907e3444190fdcb077a0d7f7, type: 3}
 --- !u!212 &393017961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -967,34 +963,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a0714be9520cb40977533182fa7d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castingBar: {fileID: 0}
-  spellName: {fileID: 0}
-  castTime: {fileID: 0}
-  icon: {fileID: 0}
-  canvasGroup: {fileID: 0}
   spells:
   - name: Fire
     damage: 5
-    icon: {fileID: 21300000, guid: 8ea0b0a70bdf3d84b8604b5235703422, type: 3}
-    speed: 3
-    castTime: 0
+    icon: {fileID: 21300000, guid: d08367fcdcee9134dbc7f3482a8cd193, type: 3}
+    speed: 5
     spellPrefab: {fileID: 4235026016964646623, guid: ba4d1a4ac84b1944ab03ffba83cca2f2, type: 3}
-    barColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-  - name: 
-    damage: 0
-    icon: {fileID: 0}
-    speed: 0
-    castTime: 0
-    spellPrefab: {fileID: 0}
-    barColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
+  - name: Ice
+    damage: 5
+    icon: {fileID: 21300000, guid: 791a077651d414d49b89f92e214c1d65, type: 3}
+    speed: 5
+    spellPrefab: {fileID: 4235026016964646623, guid: 56aa7165907e3444190fdcb077a0d7f7, type: 3}
 --- !u!1 &500886332
 GameObject:
   m_ObjectHideFlags: 0
