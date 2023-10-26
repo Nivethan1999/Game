@@ -106,7 +106,7 @@ public class Player : Character
 
         myAnimator.SetBool("attack", isAttacking); // Starts attack animation
 
-        yield return new WaitForSeconds(0); // Hardcoded to cast til 1 seocond without movement
+        yield return new WaitForSeconds(1); // Hardcoded to cast til 1 seocond without movement
 
         Spell s = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
 
