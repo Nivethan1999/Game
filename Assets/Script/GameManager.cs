@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Player player;
 
-    private NPC currentTarget;
+    //private NPC currentTarget;
  
     // Update is called once per frame
     void Update()
@@ -28,25 +28,25 @@ public class GameManager : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if(currentTarget != null)
+                if(hit.collider.tag == "Enemy")
                 {
-                    currentTarget.DeSelect();
+                    player.MyTarget = hit.transform.GetChild(0);
 
                 }
 
-                currentTarget = hit.collider.GetComponent<NPC>();
+                //currentTarget = hit.collider.GetComponent<NPC>();
 
-                player.MyTarget = currentTarget.Select();
+                //player.MyTarget = currentTarget.Select();
 
             }
             else
             {
-                if(currentTarget != null)
-                {
-                    currentTarget.DeSelect();
-                }
+                //if(currentTarget != null)
+                //{
+                //    currentTarget.DeSelect();
+                //}
 
-                currentTarget = null;
+                //currentTarget = null;
                 player.MyTarget = null;
             }
 

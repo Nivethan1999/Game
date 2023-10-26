@@ -16,8 +16,6 @@ public class Player : Character
 
     private float initMana = 50;
 
-    [SerializeField]
-    private GameObject[] spellPrefab;
 
     [SerializeField]
     private Block[] blocks;
@@ -27,14 +25,17 @@ public class Player : Character
 
     private int exitIndex = 2;
 
-    private SpellBook spellBook;
+    [SerializeField]
+    private GameObject[] spellPrefab;
+
+
 
     public Transform MyTarget { get; set; }
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        spellBook = GetComponent<SpellBook>();
+     
         health.Initialize(initHealth, initHealth);
         mana.Initialize(initMana, initMana);
 
@@ -88,43 +89,30 @@ public class Player : Character
             direction += Vector2.right;
         }
 
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if (!isAttacking && !IsMoving)
-            {
-                attackRoutine = StartCoroutine(Attack());
-            }
-            
-            
+        //if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Space))
+        //{
+        //    if (!isAttacking && !IsMoving)
+        //    {
+        //        attackRoutine = StartCoroutine(Attack());
+        //    }
 
-        }
+        //}
     }
 
-    private IEnumerator Attack()
+    private IEnumerator Attack(int spellIndex)
     {
-        //Spell newSpell = spellBook.CastSpell(spellIndex);
 
-        //Transform currentTarget = MyTarget; 
+        isAttacking = true; // Indicates if we are attacking
 
-        //isAttacking = true; // Indicates if we are attacking
+        myAnimator.SetBool("attack", isAttacking); // Starts attack animation
 
-        //myAnimator.SetBool("attack", isAttacking); // Starts attack animation
+        yield return new WaitForSeconds(0); // Hardcoded to cast til 1 seocond without movement
 
-        //yield return new WaitForSeconds(newSpell.MyCastTime); // Hardcoded to cast til 1 seocond without movement
+        Spell s = Instantiate(spellPrefab[spellIndex], exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
 
-        ////SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<Spell>();
+        s.MyTarget = MyTarget;
 
-        ////s.Initialize(currentTarget, newSpell.MyDamage);
-
-        //StopAttack(); // Stops attack
-
-     
-        isAttacking = true;
-        myAnimator.SetBool("attack", isAttacking);
-
-        yield return new WaitForSeconds(1);
-
-        StopAttack();
+        StopAttack(); // Stops attack
 
     }
 
@@ -134,7 +122,7 @@ public class Player : Character
 
         if (MyTarget != null && !isAttacking && !IsMoving && InLineOfSight()) // Checks if we are able to attack
         {
-            attackRoutine = StartCoroutine(Attack());
+            attackRoutine = StartCoroutine(Attack(spellIndex));
         }
 
     }
@@ -168,7 +156,7 @@ public class Player : Character
 
     public override void StopAttack()
     {
-        spellBook.StopCasting();
+
 
         base.StopAttack();
     }

@@ -1,39 +1,58 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Security.Cryptography;
 using UnityEngine;
 
-
-[Serializable]
-public class Spell
+public class Spell : MonoBehaviour
 {
-    [SerializeField]
-    private string name;
-    
-    [SerializeField]
-    private int damage;
-
-    [SerializeField]
-    private Sprite icon;
+    private Rigidbody2D myRigidbody;
 
     [SerializeField]
     private float speed;
 
-    [SerializeField]
-    private float castTime;
 
-    [SerializeField]
-    private GameObject spellPrefab;
+    public Transform MyTarget { get; set; }
 
-    [SerializeField]
-    private Color barColor;
+    private int damage;
 
-    public string MyName { get => name;  }
-    public int MyDamage { get => damage;  }
-    public Sprite MyIcon { get => icon;  }
-    public float MySpeed { get => speed;  }
-    public float MyCastTime { get => castTime;  }
-    public GameObject MySpellPrefab { get => spellPrefab; }
-    public Color MyBarColor { get => barColor; }
+    // Start is called before the first frame update
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+
+    }
+
+    public void Initialize(Transform target, int damage)
+    {
+        this.MyTarget = target; 
+        this.damage = damage;
+    }
+
+    private void FixedUpdate()
+    {
+        if(MyTarget != null)
+        {
+            Vector2 direction = MyTarget.position - transform.position;
+
+            myRigidbody.velocity = direction.normalized * speed;
+
+            float angle = (float)Math.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "HitBox" && collision.transform == MyTarget)
+        {
+            //speed = 0;
+            //collision.GetComponentInParent<Enemy>().TakeDamage(damage);
+            GetComponent<Animator>().SetTrigger("impact");
+            myRigidbody.velocity = Vector2.zero;
+            MyTarget = null;
+        }
+    }
 }

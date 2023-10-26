@@ -79,12 +79,12 @@ public abstract class Character : MonoBehaviour
         }
         else if (isAttacking)
         {
-            ActivateLayer("AttackLayer");
+            ActivateLayer("Attack");
         }
         else
         {
             //Going to idle if we not are going
-            ActivateLayer("IdleLayer");
+            ActivateLayer("Idle");
         }
     }
 
