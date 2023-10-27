@@ -12,7 +12,7 @@ public class Player : Character
     [SerializeField]
     private Stat mana;
 
-    private float initHealth = 100;
+    
 
     private float initMana = 50;
 
@@ -36,7 +36,6 @@ public class Player : Character
     {
 
         spellBook = GetComponent<SpellBook>();
-        health.Initialize(initHealth, initHealth);
         mana.Initialize(initMana, initMana);
 
         base.Start();
@@ -101,6 +100,9 @@ public class Player : Character
 
     private IEnumerator Attack(int spellIndex)
     {
+
+        Transform currentTarget = MyTarget;
+
         Spell newSpell = spellBook.CastSpell(spellIndex);
 
         isAttacking = true; // Indicates if we are attacking
@@ -109,9 +111,15 @@ public class Player : Character
 
         yield return new WaitForSeconds(1); // Hardcoded to cast til 1 seocond without movement
 
-        SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
+        if (currentTarget != null && InLineOfSight())
+        {
+            SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
+            s.Initialize(currentTarget, newSpell.MyDamage);
+        }
 
-        s.MyTarget = MyTarget;
+        
+
+        
 
         StopAttack(); // Stops attack
 

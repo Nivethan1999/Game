@@ -26,6 +26,9 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected Stat health;
 
+    [SerializeField]
+    protected float initHealth;
+
 
     public bool IsMoving
     {
@@ -38,6 +41,7 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        health.Initialize(initHealth, initHealth);
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();   
     }
@@ -116,7 +120,7 @@ public abstract class Character : MonoBehaviour
 
         if(health.MyCurrentValue <= 0)
         {
-
+            myAnimator.SetTrigger("Death");
         }
     }
         

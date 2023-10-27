@@ -11,7 +11,7 @@ public class Spell
 
 
     [SerializeField]
-    private string damage;
+    private int damage;
 
     [SerializeField]
     private Sprite icon;
@@ -25,7 +25,7 @@ public class Spell
     private GameObject spellPrefab;
 
     public string MyName { get => name; }
-    public string MyDamage { get => damage;  }
+    public int MyDamage { get => damage;  }
     public Sprite MyIcon { get => icon;  }
     public float MySpeed { get => speed; }
     public GameObject MySpellPrefab { get => spellPrefab; }

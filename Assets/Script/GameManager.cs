@@ -11,46 +11,51 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Player player;
 
-    //private NPC currentTarget;
- 
+    private NPC currentTarget;
+
     // Update is called once per frame
     void Update()
     {
-        ClickTarget(); 
+        ClickTarget();
     }
 
     private void ClickTarget()
     {
-        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) //If we click left button
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) //If we click left button
         {
             //Raycast from mouse position into the gameworld
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector2.zero,Mathf.Infinity,512);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, 512);
 
             if (hit.collider != null)
             {
-                if(hit.collider.tag == "Enemy")
-                {
-                    player.MyTarget = hit.transform.GetChild(0);
 
+                if (currentTarget != null)
+                {
+                
+                    
+                    currentTarget.DeSelect();
+                    
                 }
 
-                //currentTarget = hit.collider.GetComponent<NPC>();
 
-                //player.MyTarget = currentTarget.Select();
+                currentTarget = hit.collider.GetComponent<NPC>();
+
+                player.MyTarget = currentTarget.Select();
 
             }
             else
             {
-                //if(currentTarget != null)
-                //{
-                //    currentTarget.DeSelect();
-                //}
+                if (currentTarget != null)
+                {
+                    currentTarget.DeSelect();
+                }
 
-                //currentTarget = null;
+                currentTarget = null;
                 player.MyTarget = null;
             }
 
         }
-     
+
+        }
     }
-}
+
