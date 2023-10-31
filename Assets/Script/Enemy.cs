@@ -10,6 +10,10 @@ public class Enemy : NPC
 
     private Transform target;
 
+    private IState state;
+
+    public float enemyAttackRange { get; set; }
+
     public Transform Target
     {
         get
@@ -22,11 +26,18 @@ public class Enemy : NPC
         }
     }
 
-    
+    protected void Awake()
+    {
+        enemyAttackRange = 0.5f;
+        changeState(new IdleState());
+    }
+
+
 
     protected override void Update()
     {
-        FollowTarget();
+        state.Update();
+        
         base.Update();
       
     }
@@ -45,11 +56,17 @@ public class Enemy : NPC
         base.DeSelect();
     }
 
-    private void FollowTarget()
+ 
+
+    public void changeState(IState newstate)
     {
-        if (target != null)
+        if (state != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            state.Exit();
         }
+
+        state = newstate;
+
+        state.Enter(this);
     }
 }

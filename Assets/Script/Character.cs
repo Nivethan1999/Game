@@ -8,11 +8,11 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]
-    protected float speed;
+    private float speed;
 
     protected Animator myAnimator;
 
-    protected Vector2 direction;
+    private Vector2 direction;
 
     private Rigidbody2D myRigidbody;
 
@@ -34,9 +34,12 @@ public abstract class Character : MonoBehaviour
     {
         get
         {
-            return direction.x != 0 || direction.y != 0;
+            return Direction.x != 0 || Direction.y != 0;
         }
     }
+
+    public Vector2 Direction { get => direction; set => direction = value; }
+    public float Speed { get => speed; set => speed = value; }
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -59,7 +62,7 @@ public abstract class Character : MonoBehaviour
 
     public void Move()
     {
-        myRigidbody.velocity = direction.normalized * speed;
+        myRigidbody.velocity = Direction.normalized * Speed;
     }
 
     public void AnimateMovement(Vector2 direction)
@@ -75,10 +78,9 @@ public abstract class Character : MonoBehaviour
             ActivateLayer("Walk");
 
             //Set animation parameter so that he faces the correct direction
-            myAnimator.SetFloat("x", direction.x);
-            myAnimator.SetFloat("y", direction.y);
+            myAnimator.SetFloat("x", Direction.x);
+            myAnimator.SetFloat("y", Direction.y);
 
-            StopAttack();
 
         }
         else if (isAttacking)
@@ -102,17 +104,7 @@ public abstract class Character : MonoBehaviour
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName), 1);
     }
 
-    public virtual void StopAttack()
-    {
-        isAttacking = false;
-
-        myAnimator.SetBool("attack", isAttacking);
-
-        if (attackRoutine != null)
-        {
-            StopCoroutine(attackRoutine);
-        }
-    }
+    
 
     public virtual void TakeDamage(float damage)
     {

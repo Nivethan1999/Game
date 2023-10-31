@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a706aba24c45a94d8dae6cdfa1bed03
+guid: 26a3dd820a75fb547b4e7830eb0c1cd7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: U_Walk_0
+      name: Left_Walk_0
       rect:
         serializedVersion: 2
         x: 15
-        y: 10
-        width: 19
-        height: 23
+        y: 9
+        width: 22
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5045affb2f01324a94896cd39e98901
-      internalID: 576937225
+      spriteID: e9610f354e4367440abea74362e7fc4f
+      internalID: 1563271732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_1
+      name: Left_Walk_1
       rect:
         serializedVersion: 2
-        x: 63
-        y: 12
-        width: 18
-        height: 22
+        x: 62
+        y: 9
+        width: 22
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501846086f2cf4444b19f438b578d32a
-      internalID: -1331346904
+      spriteID: 73621fa50719b9c499cb20e7afe25197
+      internalID: 339109716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_2
+      name: Left_Walk_2
       rect:
         serializedVersion: 2
         x: 111
-        y: 11
-        width: 19
-        height: 22
+        y: 7
+        width: 23
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f689f6064e380946b62826bbce3fe0c
-      internalID: 2101291095
+      spriteID: c9ae9e5ea83e5d8429ce550f501dd784
+      internalID: 682183817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_3
+      name: Left_Walk_3
       rect:
         serializedVersion: 2
         x: 160
-        y: 10
-        width: 18
-        height: 23
+        y: 7
+        width: 22
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,41 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e2fcfa52ff12a4a8dd63d6e4f7325f
-      internalID: -1280524939
+      spriteID: 94ded2221f3254c4f90c76d1133a5bc5
+      internalID: 698886878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_4
+      name: Left_Walk_4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 12
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fb539593e853884cbfce5a5174a776f
-      internalID: 1977195387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: U_Walk_5
-      rect:
-        serializedVersion: 2
-        x: 256
+        x: 205
         y: 11
-        width: 18
-        height: 22
+        width: 25
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16b3d94f44d7f1e4a853c579b446aa0f
-      internalID: 250437208
+      spriteID: a6a859aba35892641b4b2cca4adaa33c
+      internalID: 1383029521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 9
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615c74dbd066b58489674f07ae20bf27
+      internalID: -1316341687
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      U_Walk_0: 576937225
-      U_Walk_1: -1331346904
-      U_Walk_2: 2101291095
-      U_Walk_3: -1280524939
-      U_Walk_4: 1977195387
-      U_Walk_5: 250437208
+      Left_Walk_0: 1563271732
+      Left_Walk_1: 339109716
+      Left_Walk_2: 682183817
+      Left_Walk_3: 698886878
+      Left_Walk_4: 1383029521
+      Left_Walk_5: -1316341687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

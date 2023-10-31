@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a706aba24c45a94d8dae6cdfa1bed03
+guid: 28a8830dd6261534ebc887c7d9b69eb6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: U_Walk_0
+      name: Right_Attack_0
       rect:
         serializedVersion: 2
         x: 15
+        y: 7
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f2e190f64079247aba9d396bdd085e
+      internalID: 1131354863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 8
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fedb05c9b54e9e245a2ff3f1110b03bc
+      internalID: -1920971896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 114
         y: 10
-        width: 19
-        height: 23
+        width: 15
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,62 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5045affb2f01324a94896cd39e98901
-      internalID: 576937225
+      spriteID: a2dae24a9f272f14999c8ea137949068
+      internalID: -107967939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 12
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 501846086f2cf4444b19f438b578d32a
-      internalID: -1331346904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: U_Walk_2
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 11
-        width: 19
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f689f6064e380946b62826bbce3fe0c
-      internalID: 2101291095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: U_Walk_3
+      name: Right_Attack_3
       rect:
         serializedVersion: 2
         x: 160
-        y: 10
+        y: 7
         width: 18
-        height: 23
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45e2fcfa52ff12a4a8dd63d6e4f7325f
-      internalID: -1280524939
+      spriteID: 0061bae8c4c651042ad4fe548d89b3c6
+      internalID: 499652030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_4
+      name: Right_Attack_4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 12
-        width: 18
-        height: 22
+        x: 209
+        y: 10
+        width: 20
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fb539593e853884cbfce5a5174a776f
-      internalID: 1977195387
+      spriteID: 890146f1ec4ca7a4aa1a7be20020a4d5
+      internalID: 1722673220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Walk_5
+      name: Right_Attack_5
       rect:
         serializedVersion: 2
         x: 256
-        y: 11
-        width: 18
-        height: 22
+        y: 7
+        width: 22
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16b3d94f44d7f1e4a853c579b446aa0f
-      internalID: 250437208
+      spriteID: 76bdd85e8cc25814e8f60a1928825347
+      internalID: 885722887
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      U_Walk_0: 576937225
-      U_Walk_1: -1331346904
-      U_Walk_2: 2101291095
-      U_Walk_3: -1280524939
-      U_Walk_4: 1977195387
-      U_Walk_5: 250437208
+      Right_Attack_0: 1131354863
+      Right_Attack_1: -1920971896
+      Right_Attack_2: -107967939
+      Right_Attack_3: 499652030
+      Right_Attack_4: 1722673220
+      Right_Attack_5: 885722887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
