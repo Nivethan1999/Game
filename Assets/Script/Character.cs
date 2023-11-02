@@ -10,13 +10,13 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    protected Animator myAnimator;
+    public Animator MyAnimator { get; set; }
 
     private Vector2 direction;
 
     private Rigidbody2D myRigidbody;
 
-    protected bool isAttacking = false;
+    public bool isAttacking { get; set; }
 
     protected Coroutine attackRoutine;
 
@@ -41,12 +41,21 @@ public abstract class Character : MonoBehaviour
     public Vector2 Direction { get => direction; set => direction = value; }
     public float Speed { get => speed; set => speed = value; }
 
+    public bool IsAlive
+    {
+        get
+        {
+           return health.MyCurrentValue > 0;
+        }
+    }
+   
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         health.Initialize(initHealth, initHealth);
         myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();   
+        MyAnimator = GetComponent<Animator>();   
     }
 
     // Update is called once per frame
@@ -62,7 +71,12 @@ public abstract class Character : MonoBehaviour
 
     public void Move()
     {
-        myRigidbody.velocity = Direction.normalized * Speed;
+        if (IsAlive)
+        {
+            myRigidbody.velocity = Direction.normalized * Speed;
+        }
+
+       
     }
 
     public void AnimateMovement(Vector2 direction)
@@ -72,36 +86,46 @@ public abstract class Character : MonoBehaviour
 
     public void HandleLayers()
     {
-        //Check if we are moving or standing still
-        if (IsMoving)
+        if (IsAlive)
         {
-            ActivateLayer("Walk");
+            //Check if we are moving or standing still
+            if (IsMoving)
+            {
+                ActivateLayer("WalkLayer");
 
-            //Set animation parameter so that he faces the correct direction
-            myAnimator.SetFloat("x", Direction.x);
-            myAnimator.SetFloat("y", Direction.y);
+                //Set animation parameter so that he faces the correct direction
+                MyAnimator.SetFloat("x", Direction.x);
+                MyAnimator.SetFloat("y", Direction.y);
 
 
-        }
-        else if (isAttacking)
-        {
-            ActivateLayer("Attack");
+            }
+            else if (isAttacking)
+            {
+                ActivateLayer("AttackLayer");
+            }
+            else
+            {
+                //Going to idle if we not are going
+                ActivateLayer("IdleLayer");
+            }
+
         }
         else
         {
-            //Going to idle if we not are going
-            ActivateLayer("Idle");
+            ActivateLayer("DeathLayer");
         }
+
+        
     }
 
     public void ActivateLayer(string layerName)
     {
-        for (int i = 0; i < myAnimator.layerCount; i++)
+        for (int i = 0; i < MyAnimator.layerCount; i++)
         {
-            myAnimator.SetLayerWeight(i, 0);
+            MyAnimator.SetLayerWeight(i, 0);
         }
 
-        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName), 1);
+        MyAnimator.SetLayerWeight(MyAnimator.GetLayerIndex(layerName), 1);
     }
 
     
@@ -112,7 +136,9 @@ public abstract class Character : MonoBehaviour
 
         if(health.MyCurrentValue <= 0)
         {
-            myAnimator.SetTrigger("Death");
+            Direction = Vector2.zero;
+            myRigidbody.velocity = Direction;
+            MyAnimator.SetTrigger("die");
         }
     }
         

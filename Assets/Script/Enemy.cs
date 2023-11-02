@@ -14,6 +14,8 @@ public class Enemy : NPC
 
     public float enemyAttackRange { get; set; }
 
+    public float AttackTime { get; set; }
+
     public Transform Target
     {
         get
@@ -28,7 +30,7 @@ public class Enemy : NPC
 
     protected void Awake()
     {
-        enemyAttackRange = 0.5f;
+        enemyAttackRange = 1;
         changeState(new IdleState());
     }
 
@@ -36,10 +38,21 @@ public class Enemy : NPC
 
     protected override void Update()
     {
-        state.Update();
-        
+        if (IsAlive)
+        {
+            if (!isAttacking)
+            {
+                AttackTime += Time.deltaTime;
+            }
+
+            state.Update();
+
+           
+        }
         base.Update();
-      
+
+
+
     }
 
     public override Transform Select()

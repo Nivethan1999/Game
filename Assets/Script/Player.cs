@@ -103,7 +103,7 @@ public class Player : Character
 
         isAttacking = true; // Indicates if we are attacking
 
-        myAnimator.SetBool("attack", isAttacking); // Starts attack animation
+        MyAnimator.SetBool("attack", isAttacking); // Starts attack animation
 
         yield return new WaitForSeconds(1); // Hardcoded to cast til 1 seocond without movement
 
@@ -162,9 +162,12 @@ public class Player : Character
 
     public void StopAttack()
     {
+
+
+
         isAttacking = false;
 
-        myAnimator.SetBool("attack", isAttacking);
+        MyAnimator.SetBool("attack", isAttacking);
 
         if (attackRoutine != null)
         {

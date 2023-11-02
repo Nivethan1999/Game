@@ -18,6 +18,8 @@ public class IdleState : IState
 
     public void Update()
     {
+        Debug.Log("Ilde");
+
         if (parent.Target != null)
         {
             parent.changeState(new FollowState());

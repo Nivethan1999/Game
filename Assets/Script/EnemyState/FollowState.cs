@@ -19,6 +19,8 @@ class FollowState : IState
 
     public void Update()
     {
+        Debug.Log("Follow");
+
         if (parent.Target != null)
         {
             parent.Direction = (parent.Target.transform.position - parent.transform.position).normalized;
