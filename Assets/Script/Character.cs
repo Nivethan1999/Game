@@ -29,6 +29,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected float initHealth;
 
+    public Transform MyTarget { get; set; }
+
 
     public bool IsMoving
     {

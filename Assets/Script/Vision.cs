@@ -17,7 +17,7 @@ public class Vision : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            parent.Target = collision.transform;
+            parent.MyTarget = collision.transform;
             Debug.Log("Test1");
         }
     }
@@ -26,7 +26,7 @@ public class Vision : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            parent.Target = null;
+            parent.MyTarget = null;
             Debug.Log("Test2");
         }
     }

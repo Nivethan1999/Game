@@ -21,11 +21,11 @@ class FollowState : IState
     {
         Debug.Log("Follow");
 
-        if (parent.Target != null)
+        if (parent.MyTarget != null)
         {
-            parent.Direction = (parent.Target.transform.position - parent.transform.position).normalized;
-            parent.transform.position = Vector2.MoveTowards(parent.transform.position, parent.Target.position, parent.Speed * Time.deltaTime);
-            float distance = Vector2.Distance(parent.Target.position, parent.transform.position);
+            parent.Direction = (parent.MyTarget.transform.position - parent.transform.position).normalized;
+            parent.transform.position = Vector2.MoveTowards(parent.transform.position, parent.MyTarget.position, parent.Speed * Time.deltaTime);
+            float distance = Vector2.Distance(parent.MyTarget.position, parent.transform.position);
 
             if(distance <= parent.enemyAttackRange)
             {

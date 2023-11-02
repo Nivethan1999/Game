@@ -8,7 +8,6 @@ public class Enemy : NPC
     [SerializeField]
     private CanvasGroup healthGroup;
 
-    private Transform target;
 
     private IState state;
 
@@ -16,17 +15,6 @@ public class Enemy : NPC
 
     public float AttackTime { get; set; }
 
-    public Transform Target
-    {
-        get
-        {
-            return target;
-        }
-        set
-        {
-            target = value;
-        }
-    }
 
     protected void Awake()
     {
@@ -68,6 +56,8 @@ public class Enemy : NPC
 
         base.DeSelect();
     }
+
+   
 
  
 

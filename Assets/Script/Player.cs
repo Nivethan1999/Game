@@ -28,9 +28,6 @@ public class Player : Character
     private SpellBook spellBook;
 
 
-
-    public Transform MyTarget { get; set; }
-
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -125,7 +122,7 @@ public class Player : Character
     {
         Block();
 
-        if (MyTarget != null && !isAttacking && !IsMoving && InLineOfSight()) // Checks if we are able to attack
+        if (MyTarget != null && MyTarget.GetComponentInParent<Character>().IsAlive && !isAttacking && !IsMoving && InLineOfSight()) // Checks if we are able to attack
         {
             attackRoutine = StartCoroutine(Attack(spellIndex));
         }

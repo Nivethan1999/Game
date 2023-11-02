@@ -30,9 +30,9 @@ public class AttackState : IState
             parent.StartCoroutine(Atack());
         }
 
-        if(parent.Target != null)
+        if(parent.MyTarget != null)
         {
-            float distance = Vector2.Distance(parent.Target.position, parent.transform.position);
+            float distance = Vector2.Distance(parent.MyTarget.position, parent.transform.position);
 
             if(distance >= parent.enemyAttackRange+extraRange && !parent.isAttacking)
             {

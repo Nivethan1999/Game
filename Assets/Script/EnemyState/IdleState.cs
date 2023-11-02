@@ -20,7 +20,7 @@ public class IdleState : IState
     {
         Debug.Log("Ilde");
 
-        if (parent.Target != null)
+        if (parent.MyTarget != null)
         {
             parent.changeState(new FollowState());
         }
