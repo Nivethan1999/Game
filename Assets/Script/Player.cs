@@ -12,10 +12,7 @@ public class Player : Character
     [SerializeField]
     private Stat mana;
 
-    
-
     private float initMana = 50;
-
 
     [SerializeField]
     private Block[] blocks;
@@ -26,6 +23,8 @@ public class Player : Character
     private int exitIndex = 2;
 
     private SpellBook spellBook;
+
+    private Vector3 min, max;
 
 
     // Start is called before the first frame update
@@ -43,6 +42,9 @@ public class Player : Character
     {
         GetInput();
         //Debug.Log(LayerMask.GetMask("Block"));
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,min.x,max.x),Mathf.Clamp(transform.position.y,min.y,max.y),transform.position.z);
+
         base.Update();
 
     }
@@ -91,6 +93,12 @@ public class Player : Character
         }
     }
 
+    public void SetLimits(Vector3 min, Vector3 max)
+    {
+        this.min = min;
+        this.max = max;
+    }
+
     private IEnumerator Attack(int spellIndex)
     {
 
@@ -107,7 +115,7 @@ public class Player : Character
         if (currentTarget != null && InLineOfSight())
         {
             SpellScript s = Instantiate(newSpell.MySpellPrefab, exitPoints[exitIndex].position, Quaternion.identity).GetComponent<SpellScript>();
-            s.Initialize(currentTarget, newSpell.MyDamage);
+            s.Initialize(currentTarget, newSpell.MyDamage, transform);
         }
 
         

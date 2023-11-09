@@ -17,17 +17,8 @@ public class Vision : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            parent.MyTarget = collision.transform;
-            Debug.Log("Test1");
+            parent.SetTarget(collision.transform);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            parent.MyTarget = null;
-            Debug.Log("Test2");
-        }
-    }
 }

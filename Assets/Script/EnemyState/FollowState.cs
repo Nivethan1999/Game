@@ -32,7 +32,7 @@ class FollowState : IState
                 parent.changeState(new AttackState());
             }
         }
-        else
+        if(!parent.InRange)
         {
             parent.changeState(new IdleState());
         }

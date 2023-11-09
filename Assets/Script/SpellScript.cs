@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class SpellScript : MonoBehaviour
 
     public Transform MyTarget { get; private set; }
 
+    private Transform source;
+
     private int damage;
 
     // Start is called before the first frame update
@@ -23,10 +26,11 @@ public class SpellScript : MonoBehaviour
 
     }
 
-    public void Initialize(Transform target, int damage)
+    public void Initialize(Transform target, int damage, Transform source)
     {
         this.MyTarget = target; 
         this.damage = damage;
+        this.source = source;
     }
 
     private void FixedUpdate()
@@ -48,8 +52,9 @@ public class SpellScript : MonoBehaviour
     {
         if(collision.tag == "HitBox" && collision.transform == MyTarget)
         {
+            Character c = collision.GetComponentInParent<Character>();
             speed = 0;
-            collision.GetComponentInParent<Enemy>().TakeDamage(damage);
+            c.TakeDamage(damage, source);
             GetComponent<Animator>().SetTrigger("impact");
             myRigidbody.velocity = Vector2.zero;
             MyTarget = null;

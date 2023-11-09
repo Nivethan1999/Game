@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -8,16 +9,29 @@ public class Enemy : NPC
     [SerializeField]
     private CanvasGroup healthGroup;
 
-
     private IState state;
 
     public float enemyAttackRange { get; set; }
 
     public float AttackTime { get; set; }
 
+    [SerializeField]
+    private float initAggroRange;
+
+    public float MyAggroRange { get; set; }
+
+    public bool InRange
+    {
+        get
+        {
+            return Vector2.Distance(transform.position, MyTarget.position) < MyAggroRange;
+        }
+    }
+
 
     protected void Awake()
     {
+        MyAggroRange = initAggroRange;
         enemyAttackRange = 1;
         changeState(new IdleState());
     }
@@ -57,6 +71,14 @@ public class Enemy : NPC
         base.DeSelect();
     }
 
+    public override void TakeDamage(float damage, Transform source)
+    {
+        SetTarget(source);
+
+        base.TakeDamage(damage, source);
+
+        //OnHealthChanged(health.MyCurrentValue);
+    }
    
 
  
@@ -72,4 +94,26 @@ public class Enemy : NPC
 
         state.Enter(this);
     }
+
+    public void SetTarget(Transform target)
+    {
+        if(MyTarget == null)
+        {
+            float distance = Vector2.Distance(transform.position, target.position);
+            MyAggroRange = initAggroRange;
+            MyAggroRange += distance;
+            MyTarget = target;
+        }
+    }
+
+    public void Reset()
+    {
+        this.MyTarget = null;
+        this.MyAggroRange = initAggroRange;
+        //this.MyHealth.MyCurrentValue = this.MyHealth.MyMaxValue;
+        //OnHealthChanged(health.MyCurrentValue);
+
+
+    }
+
 }
