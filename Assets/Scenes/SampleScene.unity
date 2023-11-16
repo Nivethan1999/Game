@@ -820,7 +820,7 @@ MonoBehaviour:
   speed: 2
   hitBox: {fileID: 0}
   health: {fileID: 1549634814}
-  initHealth: 100
+  initHealth: 10
   mana: {fileID: 254670061}
   blocks:
   - first: {fileID: 1458928938}
@@ -106197,6 +106197,10 @@ PrefabInstance:
     - target: {fileID: 4530950174125143337, guid: 8d1049b2a9764684ea07d284cc933abb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6510207786076082975, guid: 8d1049b2a9764684ea07d284cc933abb, type: 3}
+      propertyPath: damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6510207786076082975, guid: 8d1049b2a9764684ea07d284cc933abb, type: 3}
       propertyPath: initAggroRange

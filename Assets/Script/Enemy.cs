@@ -20,6 +20,12 @@ public class Enemy : NPC
 
     public float MyAggroRange { get; set; }
 
+    //Test
+    [SerializeField]
+    private int damage;
+
+    private bool canDoDamage = true;
+
     public bool InRange
     {
         get
@@ -52,6 +58,11 @@ public class Enemy : NPC
            
         }
         base.Update();
+
+        if(MyTarget != null && !Player.MyInstance.IsAlive)
+        {
+            changeState(new IdleState());
+        }
 
 
 
@@ -114,6 +125,21 @@ public class Enemy : NPC
         //OnHealthChanged(health.MyCurrentValue);
 
 
+    }
+
+    public void DoDamage()
+    {
+        if (canDoDamage)
+        {
+            Player.MyInstance.TakeDamage(damage, transform);
+            canDoDamage = false;
+        }
+
+    }
+
+    public void CanDoDamage()
+    {
+        canDoDamage = true;
     }
 
 }

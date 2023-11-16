@@ -26,6 +26,21 @@ public class Player : Character
 
     private Vector3 min, max;
 
+    private static Player instance;
+
+    public static Player MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Player>();
+            }
+
+            return instance;
+        }
+    }
+
 
     // Start is called before the first frame update
     protected override void Start()
