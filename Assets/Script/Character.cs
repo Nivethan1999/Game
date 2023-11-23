@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
+
 
 public abstract class Character : MonoBehaviour
 {
@@ -31,6 +34,8 @@ public abstract class Character : MonoBehaviour
 
     public Transform MyTarget { get; set; }
 
+    public int numberOfEnemmies;
+
 
     public bool IsMoving
     {
@@ -55,6 +60,7 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+ 
         health.Initialize(initHealth, initHealth);
         myRigidbody = GetComponent<Rigidbody2D>();
         MyAnimator = GetComponent<Animator>();   
@@ -115,6 +121,7 @@ public abstract class Character : MonoBehaviour
         else
         {
             ActivateLayer("DeathLayer");
+            
         }
 
         
@@ -144,5 +151,9 @@ public abstract class Character : MonoBehaviour
             MyAnimator.SetTrigger("die");
         }
     }
-        
+
+    
+
 }
+
+

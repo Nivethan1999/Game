@@ -25,6 +25,7 @@ public class Enemy : NPC
     private int damage;
 
     private bool canDoDamage = true;
+  
 
     public bool InRange
     {
@@ -141,5 +142,7 @@ public class Enemy : NPC
     {
         canDoDamage = true;
     }
+
+   
 
 }

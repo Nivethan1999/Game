@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: 3bc372d9eb50dc34c89689ab2f892b1d
   - enabled: 1
+    path: Assets/Scenes/Grass.unity
+    guid: 7ab08a40bcc32a34e84165fd5c1c82a8
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Cemetary.unity
+    guid: 1891d0e7c293873498fab06b9563860e
+  - enabled: 1
+    path: Assets/Scenes/IceScene.unity
+    guid: 7fe1babbc93a9b04cad39d31e392668d
+  - enabled: 1
+    path: Assets/Scenes/FireScene.unity
+    guid: f3b0ce3e17462b04385807aebcc6ceed
   m_configObjects: {}
