@@ -64,6 +64,7 @@ public class Player : Character
 
     }
 
+
     private void GetInput()
     {
         Direction = Vector2.zero; 

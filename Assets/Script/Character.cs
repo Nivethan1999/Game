@@ -36,6 +36,11 @@ public abstract class Character : MonoBehaviour
 
     public int numberOfEnemmies;
 
+    public float knockbackForce = 0.1f;
+
+    private Rigidbody2D enemyRigidbody;
+
+
 
     public bool IsMoving
     {
@@ -63,7 +68,9 @@ public abstract class Character : MonoBehaviour
  
         health.Initialize(initHealth, initHealth);
         myRigidbody = GetComponent<Rigidbody2D>();
-        MyAnimator = GetComponent<Animator>();   
+        MyAnimator = GetComponent<Animator>();
+
+        enemyRigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -139,7 +146,7 @@ public abstract class Character : MonoBehaviour
 
     
 
-    public virtual void TakeDamage(float damage, Transform source)
+    public virtual void TakeDamage(float damage, Transform source, Vector3 attackDirection)
     {
 
         health.MyCurrentValue -= damage;
@@ -150,6 +157,11 @@ public abstract class Character : MonoBehaviour
             myRigidbody.velocity = Direction;
             MyAnimator.SetTrigger("die");
         }
+
+        Vector3 knockback = -attackDirection.normalized * knockbackForce;
+        enemyRigidbody.AddForce(knockback, ForceMode2D.Impulse);
+
+
     }
 
     

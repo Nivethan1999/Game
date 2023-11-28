@@ -25,7 +25,8 @@ public class Enemy : NPC
     private int damage;
 
     private bool canDoDamage = true;
-  
+
+    private Rigidbody2D enemyRigidbody;
 
     public bool InRange
     {
@@ -38,9 +39,12 @@ public class Enemy : NPC
 
     protected void Awake()
     {
+
         MyAggroRange = initAggroRange;
         enemyAttackRange = 1;
         changeState(new IdleState());
+
+
     }
 
 
@@ -83,17 +87,48 @@ public class Enemy : NPC
         base.DeSelect();
     }
 
-    public override void TakeDamage(float damage, Transform source)
+    //public override void TakeDamage(float damage, Transform source)
+    //{
+    //    SetTarget(source);
+
+    //    base.TakeDamage(damage, source);
+
+    //    //OnHealthChanged(health.MyCurrentValue);
+    //}
+
+    public override void TakeDamage(float damage, Transform source, Vector3 attackDirection)
     {
         SetTarget(source);
 
-        base.TakeDamage(damage, source);
+        base.TakeDamage(damage, source, attackDirection);
 
-        //OnHealthChanged(health.MyCurrentValue);
+        // Calculate knockback direction
+        Vector3 knockbackDirection = -attackDirection.normalized;
+
+        // Apply knockback force to the enemy
+        ApplyKnockback(knockbackDirection);
     }
-   
 
- 
+    private void ApplyKnockback(Vector3 knockbackDirection)
+    {
+        // Ensure that the Rigidbody component is attached to the enemy
+        if (TryGetComponent(out Rigidbody2D enemyRigidbody))
+        {
+            // Adjust the knockback force as needed
+            float knockbackForce = 5f;
+
+            // Apply knockback force to the enemy
+            enemyRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            Debug.LogError("Rigidbody2D component not found on the enemy.");
+        }
+    }
+
+
+
+
 
     public void changeState(IState newstate)
     {
@@ -132,10 +167,12 @@ public class Enemy : NPC
     {
         if (canDoDamage)
         {
-            Player.MyInstance.TakeDamage(damage, transform);
+            // Assuming enemyRigidbody is a reference to the enemy's Rigidbody2D
+            Vector3 attackDirection = (Player.MyInstance.transform.position - transform.position).normalized;
+
+            Player.MyInstance.TakeDamage(damage, transform, attackDirection);
             canDoDamage = false;
         }
-
     }
 
     public void CanDoDamage()

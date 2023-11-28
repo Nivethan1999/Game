@@ -19,6 +19,8 @@ public class SpellScript : MonoBehaviour
 
     private int damage;
 
+    private Vector3 enemyRigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,7 @@ public class SpellScript : MonoBehaviour
         {
             Character c = collision.GetComponentInParent<Character>();
             speed = 0;
-            c.TakeDamage(damage, source);
+            c.TakeDamage(damage, source, enemyRigidbody);
             GetComponent<Animator>().SetTrigger("impact");
             myRigidbody.velocity = Vector2.zero;
             MyTarget = null;

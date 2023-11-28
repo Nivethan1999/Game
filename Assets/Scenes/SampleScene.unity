@@ -695,8 +695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9080e75d8c65a49bbb0fa36c68e4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 0
   player: {fileID: 393017960}
+  enemies: []
 --- !u!4 &500886334
 Transform:
   m_ObjectHideFlags: 0
@@ -105264,6 +105264,10 @@ PrefabInstance:
     - target: {fileID: 3577174389816520666, guid: b6fce73af903f964c890645a8075aaf8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918590274141052574, guid: b6fce73af903f964c890645a8075aaf8, type: 3}
+      propertyPath: spells.Array.data[0].damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9035865392755173376, guid: b6fce73af903f964c890645a8075aaf8, type: 3}
       propertyPath: m_LocalPosition.x
