@@ -115,6 +115,7 @@ public class Enemy : NPC
         if (TryGetComponent(out Rigidbody2D enemyRigidbody))
         {
             // Adjust the knockback force as needed
+            float knockbackForce = 10f;
             float knockbackForce = 5f;
 
             // Apply knockback force to the enemy
