@@ -116,6 +116,7 @@ public class Enemy : NPC
         {
             // Adjust the knockback force as needed
             float knockbackForce = 10f;
+            float knockbackForce = 5f;
 
             // Apply knockback force to the enemy
             enemyRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
