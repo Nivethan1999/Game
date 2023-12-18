@@ -15,15 +15,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Grass.unity
     guid: 7ab08a40bcc32a34e84165fd5c1c82a8
   - enabled: 1
+    path: Assets/Scenes/Level_1_Outro.unity
+    guid: c06e86bc0105baa46a27cd31b5343295
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level_2_Outro.unity
+    guid: ae611ca6b6a4e954793cb8e142b7ccdc
   - enabled: 1
     path: Assets/Scenes/Cemetary.unity
     guid: 1891d0e7c293873498fab06b9563860e
   - enabled: 1
+    path: Assets/Scenes/Level_3_Outro.unity
+    guid: c4f1d523cc01f0147b57ed7a6f54371a
+  - enabled: 1
     path: Assets/Scenes/IceScene.unity
     guid: 7fe1babbc93a9b04cad39d31e392668d
   - enabled: 1
+    path: Assets/Scenes/Level_4_Outro.unity
+    guid: b8907ddf199d0f74b82d14507c20bb4f
+  - enabled: 1
     path: Assets/Scenes/FireScene.unity
     guid: f3b0ce3e17462b04385807aebcc6ceed
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a913cb979ae49864eaaf6fc99cd6d48c
   m_configObjects: {}

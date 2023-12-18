@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static void RestartGame()
+    {
+        SceneManager.LoadScene(0); // Replace 0 with the index of your first scene
+    }
+
     void Start()
     {
         // Count the total number of enemies in the scene

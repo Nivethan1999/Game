@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8716469
 RectTransform:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ring of Elara
+  m_Text: Game Over
 --- !u!222 &8716471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -286,16 +286,12 @@ PlayableDirector:
     value: {fileID: 8716468}
   - key: {fileID: 6754790735327089214, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
     value: {fileID: 1314575500}
+  - key: {fileID: 8092166445008284583, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6670041976974222735, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
+    value: {fileID: 0}
   - key: {fileID: -6351879969980884367, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
     value: {fileID: 74329338}
-  - key: {fileID: 6818613412390049518, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
-    value: {fileID: 1768789577}
-  - key: {fileID: -1306670095254774898, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
-    value: {fileID: 1547423584}
-  - key: {fileID: -8478554749256040533, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
-    value: {fileID: 1768789577}
-  - key: {fileID: -3805091697982534656, guid: 8dc297a41c6d284459fb80f531fbe07e, type: 2}
-    value: {fileID: 1547423584}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &152860719
@@ -375,8 +371,6 @@ RectTransform:
   m_Children:
   - {fileID: 8716469}
   - {fileID: 1314575503}
-  - {fileID: 1768789580}
-  - {fileID: 1547423587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -497,7 +491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1314575501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,8 +525,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In a world where darkness has claimed the light, one hero will embark on
-    a perilous journey.
+  m_Text: You have now completed the game and Elara has succesfully gotten her Ring
+    back
 --- !u!222 &1314575502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -652,166 +646,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1547423584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1547423587}
-  - component: {fileID: 1547423586}
-  - component: {fileID: 1547423585}
-  m_Layer: 5
-  m_Name: Intro_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1547423585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547423584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: cf8a018cb4668934282425dcedf8bb5c, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 3
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Will Elara succeed in her quest to reclaim the stolen ring and vanquish
-    the darkness that threatens the world? The journey begins.
---- !u!222 &1547423586
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547423584}
-  m_CullTransparentMesh: 1
---- !u!224 &1547423587
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547423584}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 152860722}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -29}
-  m_SizeDelta: {x: 994.2598, y: 287.3632}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1768789577
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1768789580}
-  - component: {fileID: 1768789579}
-  - component: {fileID: 1768789578}
-  m_Layer: 5
-  m_Name: Intro_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1768789578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768789577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: cf8a018cb4668934282425dcedf8bb5c, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 3
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Elara, the chosen one, is on a quest to retrieve a stolen treasure of unimaginable
-    power a magical ring, snatched from her grasp by unknown creators.
---- !u!222 &1768789579
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768789577}
-  m_CullTransparentMesh: 1
---- !u!224 &1768789580
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768789577}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 152860722}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -29}
-  m_SizeDelta: {x: 994.2598, y: 287.3632}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1917970091
 GameObject:
   m_ObjectHideFlags: 0

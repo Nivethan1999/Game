@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -156,6 +152,13 @@ public abstract class Character : MonoBehaviour
             Direction = Vector2.zero;
             myRigidbody.velocity = Direction;
             MyAnimator.SetTrigger("die");
+
+            if (gameObject.CompareTag("Player"))
+            {
+                GameManager.RestartGame();
+            }
+
+            
         }
 
         Vector3 knockback = -attackDirection.normalized * knockbackForce;
