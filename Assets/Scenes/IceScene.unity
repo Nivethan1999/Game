@@ -1595,7 +1595,7 @@ MonoBehaviour:
     elementPrefab: {fileID: 947983714242860853, guid: 2aa265bfd6b3cb14f80106bb69abfe1c, type: 3}
   - tileTag: Tree
     color: {r: 0.7254902, g: 0.47843137, b: 0.3372549, a: 1}
-    elementPrefab: {fileID: 360213365691463990, guid: 903230f8639b6a7468433657dd9a35de, type: 3}
+    elementPrefab: {fileID: 4340107621982846414, guid: c5c657093ca58a74f92ed20aedcc4743, type: 3}
   defaultTile: {fileID: 21300000, guid: 8ed1dd1a192995d48bb756edcc371444, type: 3}
   map: {fileID: 1536197579}
 --- !u!1 &1200664181

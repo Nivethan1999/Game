@@ -1457,15 +1457,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData:
   - {fileID: 2800000, guid: b5e4e55140b8bad43afeb435daf85d62, type: 3}
-  - {fileID: 2800000, guid: f3f76231b4ebe65429bd257f2cc13052, type: 3}
+  - {fileID: 2800000, guid: d20ef9f06ab32fb40960aeb9d775f298, type: 3}
   - {fileID: 2800000, guid: 260ddae13311295498dfeb4233963988, type: 3}
   mapElements:
   - tileTag: Fire
     color: {r: 0.7254902, g: 0.47843137, b: 0.3372549, a: 1}
     elementPrefab: {fileID: 9083108522210806510, guid: 276b336914c271b4287292e944db6619, type: 3}
   - tileTag: Tree
-    color: {r: 0.7254902, g: 0.3372549, b: 0.69803923, a: 1}
-    elementPrefab: {fileID: 360213365691463990, guid: 903230f8639b6a7468433657dd9a35de, type: 3}
+    color: {r: 0.72156864, g: 0.23921569, b: 0.7294118, a: 1}
+    elementPrefab: {fileID: 2498889193154041044, guid: 044d79a5568b29e439adb4c3fd89ec33, type: 3}
   defaultTile: {fileID: 21300000, guid: 8ed1dd1a192995d48bb756edcc371444, type: 3}
   map: {fileID: 1536197579}
 --- !u!1 &1200664181
