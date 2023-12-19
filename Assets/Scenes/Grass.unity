@@ -368,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31.599976, y: -31.400024}
+  m_AnchoredPosition: {x: 31.599976, y: -31.399994}
   m_SizeDelta: {x: 60.090088, y: 59.3938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219065484
@@ -1531,17 +1531,14 @@ MonoBehaviour:
   mapData:
   - {fileID: 2800000, guid: 76adb92251dd7ac4286da10b785cbe3c, type: 3}
   - {fileID: 2800000, guid: f3f76231b4ebe65429bd257f2cc13052, type: 3}
-  - {fileID: 2800000, guid: 42907f90590e7ce41bc78a4b6f6bb0fe, type: 3}
+  - {fileID: 2800000, guid: 260ddae13311295498dfeb4233963988, type: 3}
   mapElements:
   - tileTag: Grass
     color: {r: 0.05490196, g: 0.81960785, b: 0.27058825, a: 1}
     elementPrefab: {fileID: 6149294558464354957, guid: c6857a87c3fd5b3408cedabdbf25a41d, type: 3}
   - tileTag: Tree
-    color: {r: 0.7254902, g: 0.47843137, b: 0.3372549, a: 1}
-    elementPrefab: {fileID: 2462364711974291763, guid: 4f3574075fc92b4418a877b07930a685, type: 3}
-  - tileTag: Grass2
-    color: {r: 0.76862746, g: 1, b: 0.05490196, a: 1}
-    elementPrefab: {fileID: 8055762907661603348, guid: 09a87c931c77c9a40b52fcb35be2835a, type: 3}
+    color: {r: 0.53333336, g: 0, b: 0.105882354, a: 1}
+    elementPrefab: {fileID: 360213365691463990, guid: 903230f8639b6a7468433657dd9a35de, type: 3}
   defaultTile: {fileID: 21300000, guid: 8ed1dd1a192995d48bb756edcc371444, type: 3}
   map: {fileID: 1536197579}
 --- !u!1 &1200664181

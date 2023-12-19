@@ -1393,6 +1393,7 @@ MonoBehaviour:
   mapData:
   - {fileID: 2800000, guid: 331b3fcb6a44a1246ac36934eabd1676, type: 3}
   - {fileID: 2800000, guid: f3f76231b4ebe65429bd257f2cc13052, type: 3}
+  - {fileID: 2800000, guid: 260ddae13311295498dfeb4233963988, type: 3}
   mapElements:
   - tileTag: Desert1
     color: {r: 0.9372549, g: 0.8352941, b: 0.59607846, a: 1}
@@ -1400,6 +1401,9 @@ MonoBehaviour:
   - tileTag: Tree
     color: {r: 0.7254902, g: 0.47843137, b: 0.3372549, a: 1}
     elementPrefab: {fileID: 360213365691463990, guid: 903230f8639b6a7468433657dd9a35de, type: 3}
+  - tileTag: Water
+    color: {r: 0.24705882, g: 0.28235295, b: 0.8, a: 1}
+    elementPrefab: {fileID: 3721667992182024464, guid: 4f75ba8e6f29ddc40a1026699ced8260, type: 3}
   defaultTile: {fileID: -260092350, guid: b2081d03efa441a4ba7bfa51335eda76, type: 3}
   map: {fileID: 1536197579}
 --- !u!1001 &1086741498
