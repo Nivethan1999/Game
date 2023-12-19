@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976383934428823007, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4452393006884083033, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
       propertyPath: m_Name
       value: Slime_Enemy (1)
@@ -1838,6 +1842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976383934428823007, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4452393006884083033, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
       propertyPath: m_Name
       value: Slime_Enemy (2)
@@ -2024,6 +2032,10 @@ PrefabInstance:
     - target: {fileID: 1340371264822681130, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976383934428823007, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4452393006884083033, guid: 91ddeb9df0bafc14997f8e639cc44a32, type: 3}
       propertyPath: m_Name

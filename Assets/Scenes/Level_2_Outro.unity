@@ -276,7 +276,7 @@ PlayableDirector:
   m_GameObject: {fileID: 152860717}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a4197c6c480bdb140ac30a734c248a9e, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: df4ad4e43430948dca1d15bc2aca43a5, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -301,6 +301,12 @@ PlayableDirector:
   - key: {fileID: 6754790735327089214, guid: a4197c6c480bdb140ac30a734c248a9e, type: 2}
     value: {fileID: 1314575500}
   - key: {fileID: -8478554749256040533, guid: a4197c6c480bdb140ac30a734c248a9e, type: 2}
+    value: {fileID: 74329338}
+  - key: {fileID: 5995631399980247460, guid: df4ad4e43430948dca1d15bc2aca43a5, type: 2}
+    value: {fileID: 8716468}
+  - key: {fileID: 6754790735327089214, guid: df4ad4e43430948dca1d15bc2aca43a5, type: 2}
+    value: {fileID: 1314575500}
+  - key: {fileID: -8478554749256040533, guid: df4ad4e43430948dca1d15bc2aca43a5, type: 2}
     value: {fileID: 74329338}
   m_ExposedReferences:
     m_References: []
@@ -395,10 +401,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152860717}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 26c9f1463a6fc423185506158c923674, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ddad61c5829034bd781e1378f618c1b3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
