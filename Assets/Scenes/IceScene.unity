@@ -251,8 +251,12 @@ PrefabInstance:
       value: Ice_Wolf
       objectReference: {fileID: 0}
     - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
+      propertyPath: speed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
       propertyPath: damage
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -312,8 +316,12 @@ PrefabInstance:
       value: Ice_Wolf (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
+      propertyPath: speed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
       propertyPath: damage
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1238,8 +1246,12 @@ PrefabInstance:
       value: Ice_Wolf (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
+      propertyPath: speed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033370920542820718, guid: fcb7e4d7d335478409c59bb7df85a1ab, type: 3}
       propertyPath: damage
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
